@@ -1,12 +1,12 @@
 
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
 import type { Engine } from 'tsparticles-engine';
+import { loadSlim } from 'tsparticles-slim';
 
 const ParticlesBackground = () => {
   const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   }, []);
 
   return (
@@ -53,7 +53,7 @@ const ParticlesBackground = () => {
               sync: false
             }
           },
-          line_linked: {
+          links: {
             enable: true,
             distance: 150,
             color: "#9c55fd",
@@ -66,7 +66,7 @@ const ParticlesBackground = () => {
             direction: "none",
             random: true,
             straight: false,
-            out_mode: "out",
+            outMode: "out",
             bounce: false,
             attract: {
               enable: true,
@@ -76,9 +76,9 @@ const ParticlesBackground = () => {
           }
         },
         interactivity: {
-          detect_on: "window",
+          detectsOn: "window",
           events: {
-            onhover: {
+            onHover: {
               enable: true,
               mode: "grab"
             },
@@ -87,7 +87,7 @@ const ParticlesBackground = () => {
           modes: {
             grab: {
               distance: 140,
-              line_linked: {
+              links: {
                 opacity: 0.7
               }
             }
